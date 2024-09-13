@@ -11,7 +11,7 @@ This project involves implementing a simplified version of the Raft consensus al
    5. [Implementation Details](#implementation-details)
    6. [Running the Tests](#running-the-tests)
    7. [Expected Behavior and Logs](#expected-behavior-and-logs)
-   8. [Contact](#For-queries,-contact:)
+   8. [Contact](#For-queries,-contact)
 
 ## Introduction
 
