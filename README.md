@@ -4,23 +4,23 @@ This project involves implementing a simplified version of the Raft consensus al
 
 ## Table of Contents
 
-    1. Introduction
-    2. Prerequisites
-    3. Project Structure
-    4. Getting Started
-    5. Implementation Details
-    6. Running the Tests
-    7. Expected Behavior and Logs
-    8. Contact
+   1. [Introduction](#introduction)
+   2. [Prerequisites](#prerequisites)
+   3. [Project Structure](#project-structure)
+   4. [Getting Started](#getting-started)
+   5. [Implementation Details](#implementation-details)
+   6. [Running the Tests](#running-the-tests)
+   7. [Expected Behavior and Logs](#expected-behavior-and-logs)
+   8. [Contact](#For-queries,-contact:)
 
 ## Introduction
 
 Raft is a consensus algorithm designed to be easy to understand. This project implements key functionalities of Raft, including leader election and log replication, to provide fault tolerance in a distributed system. The implementation includes handling scenarios like network partitioning and node recovery.
 Prerequisites
 
-    * Go (Golang) 1.16 or later installed on your system. Install Go.
-    * Familiarity with Go programming language and basic understanding of distributed consensus algorithms.
-    * Understanding of the Raft consensus algorithm. You can refer to the Raft paper and the interactive visualization.
+   * Go (Golang) 1.16 or later installed on your system. Install Go.
+   * Familiarity with Go programming language and basic understanding of distributed consensus algorithms.
+   * Understanding of the Raft consensus algorithm. You can refer to the Raft paper and the interactive visualization.
 
 ## Project Structure
 
@@ -49,21 +49,21 @@ The project directory is organized as follows:
 
 ```
 
-    * raft_cluster.go: Handles cluster management and node interactions.
-    * raft_election_logic.go: Contains the logic for leader election.
-    * raft_leader_logic.go: Manages the leader's responsibilities, including log replication.
-    * raft_node.go: Defines the state and behavior of a Raft node.
-    * raft_rpc_handlers.go: Handles Remote Procedure Calls (RPC) for node communication.
-    * server_setup.go: Sets up the server environment for the cluster.
-    * NodeLogs/: Contains log files for each node.
-    * verbose/: Directory for detailed test logs.
+   * raft_cluster.go: Handles cluster management and node interactions.
+   * raft_election_logic.go: Contains the logic for leader election.
+   * raft_leader_logic.go: Manages the leader's responsibilities, including log replication.
+   * raft_node.go: Defines the state and behavior of a Raft node.
+   * raft_rpc_handlers.go: Handles Remote Procedure Calls (RPC) for node communication.
+   * server_setup.go: Sets up the server environment for the cluster.
+   * NodeLogs/: Contains log files for each node.
+   * verbose/: Directory for detailed test logs.
 
 ## Getting Started
 
 1. Install Go: Follow the official [Go installation guide](https://go.dev/doc/install) to set up Go on your system.
 2. Clone the Repository:
 ```
-git clone https://github.com/your-username/raft-implementation.git
+git clone https://github.com/harshapatil7/Implementing-Raft-Logic-in-Go.git
 cd raft-implementation
 ```
 3. Build the Project:
@@ -81,31 +81,32 @@ Run the Tests: You can run specific tests using:
 
 ### The following key functionalities are implemented:
 
-    1. becomeFollower Function: Handles the transition of a node to the follower state.
-    2. RequestVote Handler: Manages the logic for a follower node to handle incoming RequestVote RPCs from candidates.
-    3. Candidate Vote Handling: Handles replies to RequestVote RPCs, managing election results for candidates.
-    4. Leader Commit Logic: Manages the leader's log commitment process upon receiving majority confirmations.
+   1. becomeFollower Function: Handles the transition of a node to the follower state.
+   2. RequestVote Handler: Manages the logic for a follower node to handle incoming RequestVote RPCs from candidates.
+   3. Candidate Vote Handling: Handles replies to RequestVote RPCs, managing election results for candidates.
+   4. Leader Commit Logic: Manages the leader's log commitment process upon receiving majority confirmations.
 
 ## Running the Tests
 
 ### Tests are provided to simulate different scenarios:
 
-    * Test1: Simple leader election scenario. Tests if a leader is correctly elected and handles network partitions.
-    * Test2: Replication failure scenario where a leader is disconnected after committing some commands.
-    * Test3: More complicated leader election scenario with intentional failure to observe Raft's behavior.
-    * Test4: Log replication failure scenario where the leader drops without committing and rejoins later.
+   * Test1: Simple leader election scenario. Tests if a leader is correctly elected and handles network partitions.
+   * Test2: Replication failure scenario where a leader is disconnected after committing some commands.
+   * Test3: More complicated leader election scenario with intentional failure to observe Raft's behavior.
+   * Test4: Log replication failure scenario where the leader drops without committing and rejoins later.
 
 Run tests using the go test command as mentioned in the Getting Started section.
+
 ## Expected Behavior and Logs
 
 ### Each test generates logs that provide insights into the Raft cluster's state changes. Logs are stored in the verbose/ directory and the NodeLogs/ directory.
 
-    Verbose Logs: Contain detailed outputs for each test run.
-    Node Logs: Show individual node behavior and state transitions, useful for understanding leader elections, log replications, and network partition handling.
+   Verbose Logs: Contain detailed outputs for each test run.
+   Node Logs: Show individual node behavior and state transitions, useful for understanding leader elections, log replications, and network partition handling.
 
 **Known Issues**
 
-    Test3 Failure: Test3 is designed to fail by default. This is an intentional behavior to demonstrate a situation where no leader can be elected due to insufficient nodes. Uncomment the sleep line in Test3 to allow it to pass by giving enough time for a leader to be elected.
+   Test3 Failure: Test3 is designed to fail by default. This is an intentional behavior to demonstrate a situation where no leader can be elected due to insufficient nodes. Uncomment the sleep line in Test3 to allow it to pass by giving enough time for a leader to be elected.
 
 
 
