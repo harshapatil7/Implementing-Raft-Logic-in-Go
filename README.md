@@ -73,8 +73,8 @@ go build
 
 Run the Tests: You can run specific tests using:
 ```
-    go test -v -run Test1 > verbose/1.log
-    go test -v -run Test2 > verbose/2.log
+go test -v -run Test1 > verbose/1.log
+go test -v -run Test2 > verbose/2.log
 ```
 
 ## Implementation Details
@@ -107,41 +107,6 @@ Run tests using the go test command as mentioned in the Getting Started section.
 **Known Issues**
 
    Test3 Failure: Test3 is designed to fail by default. This is an intentional behavior to demonstrate a situation where no leader can be elected due to insufficient nodes. Uncomment the sleep line in Test3 to allow it to pass by giving enough time for a leader to be elected.
-
-
-
-## **In this project, you will:**
-
-1. Learn the basics of GoLang.
-2. Understand the basic logic behind Raft
-3. Implement part of the logic behind raft, in GoLang, for leader election and log replication.
-
-## **What you're given:**
-
-You are provided with a GoLang project structure, which, when complete, will allow you to successfully demonstrate leader election and log replication via Raft. However, parts of the code are deliberately missing; Your job is to fill it in, and make sure that expected behaviour is observed in scenarios such as network partitioning.
-```
-.
-├── go.mod
-├── NodeLogs
-│   ├── 0
-│   ├── 1
-│   ├── 2
-│   ├── 3
-│   └── 4
-├── raft_cluster.go
-├── raft_election_logic.go
-├── raft_leader_logic.go
-├── raft_node.go
-├── raft_rpc_handlers.go
-├── raft_test.go
-├── README.md
-├── server_setup.go
-└── verbose
-    ├── 1.log
-    └── 2.log
-```
-
-The files server\_setup.go, raft\_node.go and raft\_cluster.go require no modification. raft\_node.go, however, contains vital information about the persistent state of a raft node itself, and is worth going through to better understand the flow of the code.
 
 ## Things you go through before starting
 
