@@ -11,7 +11,7 @@ This project involves implementing a simplified version of the Raft consensus al
    5. [Implementation Details](#implementation-details)
    6. [Running the Tests](#running-the-tests)
    7. [Expected Behavior and Logs](#expected-behavior-and-logs)
-   8. [Contact](#For-queries,-contact)
+   8. [Contact](#For-queries-contact)
 
 ## Introduction
 
@@ -143,7 +143,7 @@ You are provided with a GoLang project structure, which, when complete, will all
 
 The files server\_setup.go, raft\_node.go and raft\_cluster.go require no modification. raft\_node.go, however, contains vital information about the persistent state of a raft node itself, and is worth going through to better understand the flow of the code.
 
-## ** Things you go through before starting **
+## Things you go through before starting
 
 Once you've installed Go, it's a good idea to familiarise yourself with Raft. [The Raft Paper](http://raft.github.io/raft.pdf) itself, in conjunction with the interactive visualisation at [https://raft.github.io/](https://raft.github.io/), is a major help there.
 
@@ -153,6 +153,6 @@ The scenarios we deal with here do not include complete node failure, although i
 
 If you don't understand why the test case are failing please go through the test case file and read comments
 
-## **For queries, contact:**
+## For queries contact
 
 **Harsha Patil:** [**harshapatil.hp01@gmail.com**](mailto:harshapatil.hp01@gmail.com)
